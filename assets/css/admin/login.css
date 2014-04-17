@@ -1,0 +1,32 @@
+.login{
+	width:500px;
+	margin:0 auto;
+	background-color:white;
+	border:1px solid #1A7AAA;
+	-moz-border-radius: 15px;      /* Gecko browsers */
+    -webkit-border-radius: 15px;   /* Webkit browsers */
+    border-radius:15px;            /* W3C syntax */
+	font-size:16px;
+}
+.login  .head{
+	width:100%;
+	height:50px;
+	line-height:50px;
+	background-color:rgb(245,245,245);
+	text-align:center;
+	font-size:18px;
+	-moz-border-radius: 15px;      /* Gecko browsers */
+    -webkit-border-radius: 15px;   /* Webkit browsers */
+    border-radius:15px;  
+}
+.login .form_login{
+	height:200px;
+	background-color:white;
+	-moz-border-radius: 15px;      /* Gecko browsers */
+    -webkit-border-radius: 15px;   /* Webkit browsers */
+    border-radius:15px;  
+	padding-left:100px;
+}
+.login .form_login ul li{
+	margin-top:10px;
+}

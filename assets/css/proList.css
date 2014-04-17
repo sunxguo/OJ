@@ -1,0 +1,29 @@
+/* CSS Document */
+.problem_list .lists li{
+	width:960px;
+	padding:10px;
+	border-bottom:1px dashed #CCC;
+}
+.problem_list .lists .list_head{
+	background-color:rgb(239,239,239);
+	height:30px;
+	line-height:30px;
+	font-size:1.1em;
+}
+.problem_list .lists li span{
+	display:inline-block;
+	text-align:center;
+}
+.problem_list .lists .list_item:hover{
+	background-color:#feb270;
+}
+.problem_list .page{
+	margin-top:50px;
+}
+.problem_list .page .page_bt{
+	width:100px;
+	height:25px;
+	font:13px Microsoft Yahei;
+	cursor:pointer;
+}
+

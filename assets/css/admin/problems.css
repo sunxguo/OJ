@@ -1,0 +1,49 @@
+/* CSS Document */
+.problem_man .oper{
+	width:90%;
+	height:50px;
+}
+#new_problem{
+	display:none;
+	background-color:white;
+	width:750px;
+	height:550px;
+	border:1px solid #1A7AAA;
+	-moz-border-radius: 5px;      /* Gecko browsers */
+    -webkit-border-radius: 5px;   /* Webkit browsers */
+    border-radius:5px;            /* W3C syntax */
+}
+.problem_man .oper h3{
+	display:inline-block;
+}
+.problem_man .oper .confirm_bt{
+	float:right;
+}
+.problem_man .lists li{
+	width:850px;
+	padding:10px;
+	border-bottom:1px dashed #CCC;
+}
+.problem_man .lists .list_head{
+	background-color:rgb(239,239,239);
+	height:30px;
+	line-height:30px;
+	font-size:1.1em;
+}
+.problem_man .lists li span{
+	display:inline-block;
+	text-align:center;
+}
+.problem_man .lists .list_item:hover{
+	background-color:#feb270;
+}
+.problem_man .page{
+	margin-top:50px;
+}
+.problem_man .page .page_bt{
+	width:100px;
+	height:25px;
+	font:13px Microsoft Yahei;
+	cursor:pointer;
+}
+

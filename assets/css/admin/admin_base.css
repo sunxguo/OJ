@@ -1,0 +1,63 @@
+/* Left Navigation */
+@import url(../base.css); 
+.admin_main .header{
+	height:100px;
+}
+.admin_main .header .logo{
+	padding-top:30px;
+}
+.sideNavi {
+	width: 210px;
+	background-color: white;	
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float:left;
+}
+
+.sideNavi  ul{
+	width: 210px;
+	background-color: white;	
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float:left;
+}
+
+.sideNavi li {
+	height: 40px;
+	line-height: 40px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	padding-left: 40px;
+	cursor: pointer;
+}
+
+.sideNavi .l1 {
+	background-color: rgb(248, 247, 248);
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	padding-left: 20px;
+}
+
+.sideNavi .cur {
+	background-color: rgb(64, 162, 215);
+	color: white;
+}
+
+.main_con {
+	width: 80%;
+	background-color: white;
+	border: 2px solid #ccc;
+	margin-left: 5px;
+	float:left;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+/* CSS Document */
+.info .title{
+	text-align:center; 
+	font-size:24px; 
+	color:#1A7AAA;
+}
+.info .title .subtitle{
+	top:30px; 
+	right:0px; 
+	font-size:10px;
+}
+.info .content{
+	
+}
+.info .submit_code{
+	margin-top:50px;
+}
