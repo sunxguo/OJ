@@ -143,4 +143,8 @@ function logout(){
 		);
 		
 }
+	//提交代码
+	function submit_code(){
+		
+	}
 	
