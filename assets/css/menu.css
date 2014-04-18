@@ -25,4 +25,5 @@ body { background-color: #FFFFFF; font-family: "微软雅黑", "宋体", "黑体
 .language { position: absolute; right: 0; top: 10px; line-height: 20px; height: 20px; font-size: 12px; color: #6D6D6D; text-align: right; }
 .language span { color: #A6A6A6; padding: 0 3px; }
 .language a { color: #A6A6A6; }
-.language a:hover { text-decoration: underline; }
+.language a:hover { color:rgb(254,119,0);}
+.language .register_bt{margin-right:20px;}

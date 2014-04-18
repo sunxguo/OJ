@@ -22,7 +22,6 @@ class Cadmin extends CI_Controller {
 		$data['p_Title']=$_POST['title'];
 		$data['p_Content']=$_POST['content'];
 		$data['p_AuthorID']=0;
-		date_default_timezone_set('PRC');
 		$data['p_Date']= date('Y-m-d',time());
 		$data['p_SubNum']=0;
 		$data['p_DealNum']=0;

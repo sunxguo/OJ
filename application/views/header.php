@@ -8,6 +8,7 @@
     <script src="/assets/js/jquery-1.4.2.js" type="text/javascript"></script>
     <script src="/assets/js/jquery.backgroundpos.js" type="text/javascript"></script>
     <script src="/assets/js/menu.js" type="text/javascript"></script>
+	 <script src="/assets/js/tools.js" type="text/javascript"></script>
 </head>
 <body>
     <div class="header">
@@ -27,6 +28,12 @@
         </ul>
         <a href="/">
             <img title="OnlineJudge" class="miui_logo" src="/assets/images/index/OJ-logo.png" alt="网站logo"></a>
-        <p class="language">中文<span>|</span><a href="#" target="_blank">English</a></p>
+        <p class="language">
+			<?php if(isset($_SESSION['username'])){?>
+			<?=$_SESSION['username']?>欢迎登录！<a class="logout_bt" href="javascript:logout();" target="_blank">退出</a>
+			<?php } else {?>
+			<a class="login_bt" href="/users/login" target="_blank">登录</a>/<a class="register_bt" href="/users/register" target="_blank">注册</a>
+			<?php }?>
+		<!--	中文<span>|</span><a href="#" target="_blank">English</a>--></p>
     </div>
 	<div class="main">

@@ -3,6 +3,7 @@
 class CproblemList extends CI_Controller {
 	function __construct(){
 		 parent::__construct();
+		 $this->load->helper("base");
 	}
 	public function getProblems(){
 		return $this->dbHandler->selectAllData('problem');

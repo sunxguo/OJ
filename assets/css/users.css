@@ -1,0 +1,29 @@
+.login{
+	width:500px;
+	height:300px;
+	margin:100px auto;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+	box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding-box;
+	background-clip: padding-box;
+	outline: none;
+}
+.login .head {
+	height:50px;
+	line-height:50px;
+	font-size:18px;
+	border-bottom: 1px solid #eee;
+	padding-left:20px;
+}
+.login ul{
+	width:350px;
+	margin:10px auto;
+}
+.login ul li{
+	margin-top:10px;
+}

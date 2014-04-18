@@ -39,7 +39,10 @@
 */
 
 $route['default_controller'] = "welcome";
-
+$route['users/login'] = "cusers/login";//用户登录
+$route['users/register'] = "cusers/register";//用户注册
+$route['users/user_login'] = "cusers/user_login";//登录方法
+$route['users/user_logout'] = "cusers/user_logout";//退出方法
 $route['problemList'] = "cproblemList";
 $route['problem'] = "cproblem";
 $route['problem/submit_code'] = "cproblem/submit_code";

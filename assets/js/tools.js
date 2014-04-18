@@ -135,4 +135,12 @@ $(document).ready(function(){
 			alert("请先选择要下架的商品！");
 		}
 	}
+function logout(){
+	$.get("/users/user_logout",
+		function(data){
+			alert(data);
+			location.reload();}
+		);
+		
+}
 	

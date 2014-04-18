@@ -19,12 +19,24 @@ class Cproblem extends CI_Controller {
 	}
 	public function submit_code(){
 		if(!checkLogin()){
-			$this->load->view(
-								'err_redirect',
-								array("error"=>"请先登录！","url"=>"/problem")
+			$this->load->view('redirect',
+							array("error"=>"请先登录！","url"=>"/problemList")
 							);
+			return;
 		}
-		echo $_POST['code'];
+		$data['c_pID']=$_POST['pro_id'];
+		$data['c_code']=$_POST['code'];
+		$data['c_uID']=$_SESSION['userid'];
+		$data['c_creationDate']= date('Y-m-d h:i:s',time());
+		$data['c_status']=0;
+		$this->load->model("dbHandler");
+		$result=$this->dbHandler->insertdata('code',$data);
+		if($result==1){
+			$this->load->view('redirect',
+				array("error"=>"提交成功！","url"=>"/users/mycode"));
+		}
+		else $this->load->view('redirect',
+				array("error"=>"提交失败！请重试！","url"=>"/problemList"));
 	}
 }
 ?>
