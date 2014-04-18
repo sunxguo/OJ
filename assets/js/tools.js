@@ -135,4 +135,8 @@ $(document).ready(function(){
 			alert("请先选择要下架的商品！");
 		}
 	}
+	//提交代码
+	function submit_code(){
+		
+	}
 	
