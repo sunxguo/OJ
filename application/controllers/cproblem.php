@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+ini_set('safe_mode',0);
 class Cproblem extends CI_Controller {
 	function __construct(){
 		 parent::__construct();
@@ -38,6 +38,11 @@ class Cproblem extends CI_Controller {
 		else $this->load->view('redirect',
 				array("error"=>"提交失败！请重试！","url"=>"/problemList"));
 	}
+	public function get_arg(){
+		$this->load->view('header',array("title"=>"OJ-获取参数"));
+		$this->load->view('test');
+		$this->load->view('footer');
+	}
 	public function execute_code(){
 		//exec('ping www.baidu.com');
 		//system('cmd /c ping www.baidu.com');
@@ -46,10 +51,48 @@ class Cproblem extends CI_Controller {
 		print_r($a);  
 		print_r($out);  
 		print_r($status); */
+		/*
 		exec("./onj hello.c 1", $output, $verdict);
 		print_r($output);
 		echo "<br>";
-		print_r($verdict);
+		print_r($verdict);*/
+		$i = 0;
+		/*
+exec('ipconfig /all', $response);
+foreach($response as $line) {
+  
+  $line = $line;
+  
+  if (strpos($line, "DNS")>0) {
+    print (trim($line));
+    echo ("\n");
+    }"	
+}
+*/
+		$code=$_POST['code'];
+		if($this->write_cpp($code)){
+			//$command="E:/Mycc/Bin/CL.exe E:/test.cpp".escapeshellcmd($_POST['args']);
+			$command="cd /&&E:&&cd Mycc/Bin&&CL.exe test.cpp";
+			exec($command);
+			//passthru($command);
+			$command="cd /&&E:&&cd Mycc/Bin&&test.exe";
+			exec($command,$result);
+			//passthru($command);
+		}
+		$this->load->view('header',array("title"=>"OJ-执行结果"));
+		$this->load->view('result',array("result"=>$result));
+		$this->load->view('footer');
+		
+	}
+	private function write_cpp($code){
+		$filename="E:/Mycc/Bin/test.cpp";
+		$fp=fopen("$filename", "w+"); //打开文件指针，创建文件
+		if ( !is_writable($filename) ){
+			  die("文件:" .$filename. "不可写，请检查！");
+		}
+		$result=fwrite($fp,$code);
+		fclose($fp);  //关闭指针
+		return $result;
 	}
 }
 ?>

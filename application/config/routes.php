@@ -48,6 +48,7 @@ $route['problem'] = "cproblem";
 $route['users/user_center_myCode'] = "cusers/user_center_myCode";
 $route['problem/submit_code'] = "cproblem/submit_code";
 $route['problem/execute_code'] = "cproblem/execute_code";
+$route['problem/get_arg'] = "cproblem/get_arg";
 //后台管理系统
 $route['admin/login'] = "cadmin/login";
 $route['admin/index'] = "cadmin/index";
