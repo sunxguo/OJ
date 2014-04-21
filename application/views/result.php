@@ -10,6 +10,7 @@
 				/*call c++ aplications,the sapce right after ./test is necessary.
 				  It separate the command from its arguments*/
 				 // $result = iconv("GBK", "UTF-8", $result[0]); 
+				$result= array_reverse($result);
 				foreach($result as $item){?>
 					<div class="dos">
 					<?=iconv("GBK", "UTF-8", $item);?>

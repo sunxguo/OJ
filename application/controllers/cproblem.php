@@ -94,5 +94,8 @@ foreach($response as $line) {
 		fclose($fp);  //关闭指针
 		return $result;
 	}
+	private get_dir_name(){
+		 return dirname(dirname(__FILE__)); 
+	}
 }
 ?>
