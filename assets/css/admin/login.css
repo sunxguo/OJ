@@ -1,5 +1,6 @@
 .login{
 	width:500px;
+	height:300px;
 	margin:0 auto;
 	background-color:white;
 	border:1px solid #1A7AAA;
@@ -25,7 +26,7 @@
 	-moz-border-radius: 15px;      /* Gecko browsers */
     -webkit-border-radius: 15px;   /* Webkit browsers */
     border-radius:15px;  
-	padding-left:100px;
+	padding-left:50px;
 }
 .login .form_login ul li{
 	margin-top:10px;

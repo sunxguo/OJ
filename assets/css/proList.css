@@ -14,16 +14,52 @@
 	display:inline-block;
 	text-align:center;
 }
+.problem_list .lists li span .checkCode{
+	color:rgb(254,119,0);
+}
+.problem_list .lists li span .checkCode:hover{
+	color:white;
+}
 .problem_list .lists .list_item:hover{
 	background-color:#feb270;
+}
+.problem_list .code{
+	width:500px;
+	display:none;
+	background-color:white;
+	border:1px solid #CCC;
+	-moz-border-radius: 5px;      /* Gecko browsers */
+    -webkit-border-radius: 5px;   /* Webkit browsers */
+    border-radius:5px;            /* W3C syntax */
+}
+.problem_list .code .head{
+	height:50px;
+	line-height:50px;
+	text-align:center;
+	color:rgb(254,119,0);
+	border-bottom:1px dashed #CCC;
+}
+.problem_list .code .close{
+	float:right;
+	width:30px;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	font-size:20px;
+	color:rgb(220,0,0);
+	border:1px solid rgb(220,0,0);
+	-moz-border-radius: 25px;      /* Gecko browsers */
+    -webkit-border-radius: 25px;   /* Webkit browsers */
+    border-radius:25px;            /* W3C syntax */
+}
+.problem_list .code .close:hover{
+	cursor:pointer;
+	color:white; 
+	background-color:rgb(220,0,0);
+}
+.problem_list .code .code_content{
+	padding:10px;
 }
 .problem_list .page{
 	margin-top:50px;
 }
-.problem_list .page .page_bt{
-	width:100px;
-	height:25px;
-	font:13px Microsoft Yahei;
-	cursor:pointer;
-}
-

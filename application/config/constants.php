@@ -35,7 +35,9 @@ define('FOPEN_WRITE_CREATE',					'ab');
 define('FOPEN_READ_WRITE_CREATE',				'a+b');
 define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
-
+define('MYCODE_PAGE_COUNT', 10);//the number of code per page in user_center
+define('PROBLEMLIST_PAGE_COUNT', 10);//the number of problem per page in problemList
+define('ADMIN_PROBLEM_PAGE_COUNT', 10);//the number of problem per page in admin problem
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

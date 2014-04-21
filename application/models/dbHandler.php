@@ -25,14 +25,22 @@ class DbHandler extends CI_Model{
 		$this->db->update($table, $data);
 		return $this->db->affected_rows();
 	 }
-	 public function selectdata($table,$where,$content,$limit)
+	 public function selectdata($table,$where,$content,$limit,$offset,$ordercol,$orderby)
 	 {
 		$this->load->database();
 		$this->db->where($where,$content);
-		$this->db->limit($limit);
+		$this->db->limit($limit,$offset);
 		$this->db->from($table);
-		//$this->db->orderby($ordercol,$orderby);
-	 	return $query = $this->db->get();
+		$this->db->order_by($ordercol,$orderby);
+	 	return $query = $this->db->get()->result();
+	 }
+	  public function selectdata_no_condition($table,$limit,$offset,$ordercol,$orderby)
+	 {
+		$this->load->database();
+		$this->db->limit($limit,$offset);
+		$this->db->from($table);
+		$this->db->order_by($ordercol,$orderby);
+	 	return $query = $this->db->get()->result();
 	 }
 	 public function selectPartData($table,$where,$content)
 	 {
@@ -52,6 +60,18 @@ class DbHandler extends CI_Model{
 		$this->load->database();
 	 	$this->db->order_by($ordercol,"desc");
 	 	return $query = $this->db->get($table);
+	 }
+	 public function amount_data($table,$where,$content)
+	 {
+		$this->load->database();
+	 	$this->db->where($where,$content);
+		$this->db->from($table);
+		return $total = $this->db->count_all_results();
+	 }
+	 public function amount_data_no_condition($table)
+	 {
+		$this->load->database();
+		return $total = $this->db->count_all($table);
 	 }
 
 }

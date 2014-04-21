@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/assets/css/proList.css" type="text/css">
+﻿<link rel="stylesheet" href="/assets/css/proList.css" type="text/css">
 <div  class="problem_list">
 	<h3>题目列表</h3>
 	<ul class="lists">
@@ -20,7 +20,8 @@
 		<?php endforeach;?>
 	</ul>
 	<div class="page">
-		<input type="button"  class="page_bt" value="上一页"/>
-		<input type="button"  class="page_bt" value="下一页"/>
+		<?=$page?>
+		<a class="<?=($pre_link=="#")?"no":"page_bt"?>" href="<?=($pre_link=="#")?"javascript:void()":$pre_link?>">上一页</a>
+		<a class="<?=($next_link=="#")?"no":"page_bt"?>"href="<?=($next_link=="#")?"javascript:void()":$next_link?>">下一页</a>
 	</div>
 </div>

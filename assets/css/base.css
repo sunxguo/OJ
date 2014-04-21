@@ -80,6 +80,40 @@ textarea{
 	background-color:#1A7AAA;
 	color:white;
 }
+.page_bt{
+	text-decoration:none;
+	display:inline-block;
+	width:100px;
+	text-align:center;
+	height:25px;
+	line-height: 25px;
+	font-size:14px;
+	cursor:pointer;
+	border:1px solid rgb(254,119,0);
+	color:rgb(254,119,0);
+	-moz-border-radius: 5px;      /* Gecko browsers */
+    -webkit-border-radius: 5px;   /* Webkit browsers */
+    border-radius:5px;            /* W3C syntax */
+}
+.page_bt:hover{
+	background-color:rgb(254,119,0);
+	color:white;
+}
+.no{
+	text-decoration:none;
+	display:inline-block;
+	width:100px;
+	text-align:center;
+	height:25px;
+	line-height: 25px;
+	font-size:14px;
+	cursor:not-allowed;
+	border:1px solid #CCC;
+	color:#CCC;
+	-moz-border-radius: 5px;      /* Gecko browsers */
+    -webkit-border-radius: 5px;   /* Webkit browsers */
+    border-radius:5px;            /* W3C syntax */
+}
 .a_bt_rig{
 	display:inline-block;
 	height:30px;
@@ -137,13 +171,17 @@ textarea{
 .colorOrange{
 	color:rgb(254,119,0);
 }
+.dont_display{
+	display:none;
+}
 .new_head{
 	height:45px;
 	line-height:45px;
-	background-color:rgb(233,233,233);
+	/*background-color:rgb(233,233,233);*/
 	font-size:18px;
 	color:rgb(45,157,213);
 	padding-left:20px;
+	border-bottom:1px solid #1A7AAA;
 }
 .new_head .close{
 	float:right;

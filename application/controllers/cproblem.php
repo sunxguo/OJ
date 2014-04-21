@@ -33,10 +33,23 @@ class Cproblem extends CI_Controller {
 		$result=$this->dbHandler->insertdata('code',$data);
 		if($result==1){
 			$this->load->view('redirect',
-				array("error"=>"提交成功！","url"=>"/users/mycode"));
+				array("error"=>"提交成功！","url"=>"/users/user_center_myCode"));
 		}
 		else $this->load->view('redirect',
 				array("error"=>"提交失败！请重试！","url"=>"/problemList"));
+	}
+	public function execute_code(){
+		//exec('ping www.baidu.com');
+		//system('cmd /c ping www.baidu.com');
+		/*
+		$a = exec("dir",$out,$status);  
+		print_r($a);  
+		print_r($out);  
+		print_r($status); */
+		exec("./onj hello.c 1", $output, $verdict);
+		print_r($output);
+		echo "<br>";
+		print_r($verdict);
 	}
 }
 ?>

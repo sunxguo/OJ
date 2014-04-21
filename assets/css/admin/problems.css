@@ -3,7 +3,17 @@
 	width:90%;
 	height:50px;
 }
-#new_problem{
+.new_problem{
+	display:none;
+	background-color:white;
+	width:750px;
+	height:550px;
+	border:1px solid #1A7AAA;
+	-moz-border-radius: 5px;      /* Gecko browsers */
+    -webkit-border-radius: 5px;   /* Webkit browsers */
+    border-radius:5px;            /* W3C syntax */
+}
+.problem_editor{
 	display:none;
 	background-color:white;
 	width:750px;
@@ -37,13 +47,23 @@
 .problem_man .lists .list_item:hover{
 	background-color:#feb270;
 }
+.problem_man .lists .problem_editor{
+	display:none;
+	background-color:white;
+	width:750px;
+	height:550px;
+	border:1px solid #1A7AAA;
+	-moz-border-radius: 5px;      /* Gecko browsers */
+    -webkit-border-radius: 5px;   /* Webkit browsers */
+    border-radius:5px;            /* W3C syntax */
+}
+.problem_man .lists .problem_editor li{
+	border:none;
+}
 .problem_man .page{
 	margin-top:50px;
-}
-.problem_man .page .page_bt{
-	width:100px;
-	height:25px;
-	font:13px Microsoft Yahei;
-	cursor:pointer;
+	margin-bottom:50px;
+	width:350px;
+	float:right;
 }
 

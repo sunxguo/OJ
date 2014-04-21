@@ -19,7 +19,7 @@
             <li class="li_3"><a class="noclick" href="/" target="_blank">个人中心</a>
                 <dl class="li_3_content">
                     <dt></dt>
-                    <dd><a href="/" target="_blank"><span>我的题目</span></a></dd>
+                    <dd><a href="/users/user_center_myCode" target="_blank"><span>我的代码</span></a></dd>
                     <dd><a href="/" target="_blank"><span>个人信息</span></a></dd>
                     <dd class="lastItem"><a href="/" target="_blank"><span>朋友圈</span></a></dd>
                 </dl>
