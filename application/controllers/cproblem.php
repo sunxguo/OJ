@@ -74,10 +74,8 @@ foreach($response as $line) {
 			//$command="E:/Mycc/Bin/CL.exe E:/test.cpp".escapeshellcmd($_POST['args']);
 			$command="cd /&&E:&&cd Mycc/Bin&&CL.exe test.cpp";
 			exec($command);
-			//passthru($command);
 			$command="cd /&&E:&&cd Mycc/Bin&&test.exe";
 			exec($command,$result);
-			//passthru($command);
 		}
 		$this->load->view('header',array("title"=>"OJ-执行结果"));
 		$this->load->view('result',array("result"=>$result));
@@ -94,7 +92,7 @@ foreach($response as $line) {
 		fclose($fp);  //关闭指针
 		return $result;
 	}
-	private get_dir_name(){
+	private function get_dir_name(){
 		 return dirname(dirname(__FILE__)); 
 	}
 }
