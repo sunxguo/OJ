@@ -20,7 +20,7 @@ class Cproblem extends CI_Controller {
 	public function submit_code(){
 		if(!checkLogin()){
 			$this->load->view('redirect',
-							array("error"=>"请先登录！","url"=>"/problemList")
+							array("error"=>"请先登录！","url"=>"/users/login")
 							);
 			return;
 		}
@@ -56,7 +56,7 @@ class Cproblem extends CI_Controller {
 		print_r($output);
 		echo "<br>";
 		print_r($verdict);*/
-		$i = 0;
+		//$i = 0;
 		/*
 exec('ipconfig /all', $response);
 foreach($response as $line) {
@@ -72,9 +72,9 @@ foreach($response as $line) {
 		$code=$_POST['code'];
 		if($this->write_cpp($code)){
 			//$command="E:/Mycc/Bin/CL.exe E:/test.cpp".escapeshellcmd($_POST['args']);
-			$command="cd /&&E:&&cd Mycc/Bin&&CL.exe test.cpp";
+			$command="cd /&&E:&&cd Mycc/Bin&&CL.exe program.cpp";
 			exec($command);
-			$command="cd /&&E:&&cd Mycc/Bin&&test.exe";
+			$command="cd /&&E:&&cd Mycc/Bin&&program.exe";
 			exec($command,$result);
 		}
 		$this->load->view('header',array("title"=>"OJ-执行结果"));
@@ -83,7 +83,7 @@ foreach($response as $line) {
 		
 	}
 	private function write_cpp($code){
-		$filename="E:/Mycc/Bin/test.cpp";
+		$filename="E:/Mycc/Bin/program.cpp";
 		$fp=fopen("$filename", "w+"); //打开文件指针，创建文件
 		if ( !is_writable($filename) ){
 			  die("文件:" .$filename. "不可写，请检查！");
