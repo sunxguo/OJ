@@ -1,6 +1,6 @@
 ﻿<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class DbHandler extends CI_Model{
+class DbHandler_model extends CI_Model{
 	function _construct()
 	{
 		parent::__construct();
@@ -9,8 +9,8 @@ class DbHandler extends CI_Model{
 	 public function insertdata($table,$data)
 	 {
 		$this->load->database();
-        $this->db->insert($table, $data);
-        return $this->db->affected_rows();
+       	        $this->db->insert($table, $data);
+       	 	return $this->db->affected_rows();
 	 }
 	 public function deletedata($table,$where,$content)
 	 {

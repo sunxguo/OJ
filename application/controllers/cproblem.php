@@ -69,21 +69,62 @@ foreach($response as $line) {
     }"	
 }
 */
-		$code=$_POST['code'];
-		if($this->write_cpp($code)){
-			//$command="E:/Mycc/Bin/CL.exe E:/test.cpp".escapeshellcmd($_POST['args']);
+	//	$code=$_POST['code'];
+	//	if($this->write_cpp($code)){
+			/*//$command="E:/Mycc/Bin/CL.exe E:/test.cpp".escapeshellcmd($_POST['args']);
 			$command="cd /&&E:&&cd Mycc/Bin&&CL.exe program.cpp";
 			exec($command);
 			$command="cd /&&E:&&cd Mycc/Bin&&program.exe";
-			exec($command,$result);
-		}
+			exec($command,$result);*/
+		//	$command="gcc /var/tmp/program.c -o /var/tmp/tt";
+			$command="cd /; ./var/tmp/t";
+			$this->execute($command,$stdout,$stderr,$process);
+			print_r($stdout);
+			print_r($stderr);
+			print_r($process);
+			
+	//	}
 		$this->load->view('header',array("title"=>"OJ-执行结果"));
-		$this->load->view('result',array("result"=>$result));
+//		$this->load->view('result',array("result"=>$stdout));
 		$this->load->view('footer');
 		
 	}
+	private function execute($command,&$stdout,&$stderr,&$processInfo)
+	{
+		//writelog("EXECUTE:".$command);
+		$descriptorspec = array(
+			0 => array("pipe", "r"),
+			1 => array("pipe", "w"),
+			2 => array("pipe", "w")
+		);
+		$process = proc_open($command, $descriptorspec, $pipes);
+		if (is_resource($process))
+		{
+			$fpout = $pipes[1];
+			$fperr = $pipes[2];
+
+			$stdout = $this->fileread($fpout);
+			$processInfo = proc_get_status($process);
+		//	exec("ps -aef | grep ".($processInfo['pid']),$pro_detail);
+			$pro_detail=fopen("/proc/".$processInfo['pid']."/statm","r");
+			$processInfo['detail']=$this->fileread($pro_detail); 
+			fclose($fpout);
+			fclose($fperr);
+			proc_close($process);
+		}
+	}
+	private function fileread($fp)
+	{
+		$str = '';
+		if (is_resource($fp))
+		{
+			while (!feof($fp))
+				$str .= fgets($fp, 128);
+		}
+		return $str;
+	}
 	private function write_cpp($code){
-		$filename="E:/Mycc/Bin/program.cpp";
+		$filename="/var/tmp/program.c";
 		$fp=fopen("$filename", "w+"); //打开文件指针，创建文件
 		if ( !is_writable($filename) ){
 			  die("文件:" .$filename. "不可写，请检查！");
