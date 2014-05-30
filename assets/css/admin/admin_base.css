@@ -5,6 +5,8 @@
 }
 .admin_main .header .logo{
 	padding-top:30px;
+	width:400px;
+	float:left;
 }
 .sideNavi {
 	width: 210px;
@@ -53,7 +55,10 @@
 	margin-left: 5px;
 	float:left;
 }
-
+.admin_main .header .info{
+	float:right;
+	margin-top: 30px;
+}
 
 
 

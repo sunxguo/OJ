@@ -15,7 +15,7 @@
 	<div class="admin_main">
 		<div class="header">
 			<div class="logo"><img src="/assets/images/admin/admin_logo.png"/></div>
-			<div class="info"></div>
+			<div class="info"><?=$_SESSION['username']?> <a href="/cadmin/logout">退出</a></div>
 		</div>
 		<div class="sideNavi">
 			<ul>

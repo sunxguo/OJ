@@ -103,8 +103,16 @@ $(document).ready(function(){
 							var Obj=$.parseJSON(data);
 							$("#prolist").html("");
 							for(var key in Obj){
-								var html='<li id="gp'+Obj[key].gp_ID+'"><span style="width:10%;">'+Obj[key].gp_pNum+'</span><span style="width:20%;">'+Obj[key].gp_pID+'</span><span style="width:40%;">'+Obj[key].gp_pNum+'</span><a style="width:20%;"  onclick="delete_data(\'grouppro\',\''+Obj[key].gp_ID+'\');">删除</a></li>';
-								$("#prolist").append(html);
+								$.ajax({
+									type:'post',
+									url:'/cadmin/get_detail',
+									async:false,
+									data:{'id':Obj[key].gp_pID,'type':'problem'},
+									success:function (pdata){
+										var problem=$.parseJSON(pdata);
+										var html='<li id="gp'+Obj[key].gp_ID+'"><span style="width:10%;">'+Obj[key].gp_pNum+'</span><span style="width:20%;">'+Obj[key].gp_pID+'</span><span style="width:40%;">'+problem.p_Title+'</span><a style="width:20%;"  onclick="delete_data(\'grouppro\',\''+Obj[key].gp_ID+'\');">删除</a></li>';
+										$("#prolist").append(html);
+									}});
 							}
 						});
 				//tab3:提交管理

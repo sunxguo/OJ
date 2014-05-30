@@ -15,7 +15,7 @@
 		<li class="list_item">
 			<span style="width:10%;"><?=$item->problem->p_ID?></span>
 			<span style="width:30%;">
-				<a href="/problem?pid=<?=$item->problem->p_ID?>" target="_blank"><?=$item->problem->p_Title?></a>
+				<a href="/problem?id=<?=$item->problem->p_ID?>" target="_blank"><?=$item->problem->p_Title?></a>
 			</span>
 			<span style="width:10%;"><?=$item->status?></span>
 			<span style="width:10%;"><?=$item->c_memory?></span>

@@ -45,6 +45,7 @@ class Cusers extends CI_Controller {
 				$_SESSION['username']=$userName;
 				$_SESSION['email']=$info['0']->u_email;
 				$_SESSION['userid']=$info['0']->u_ID;
+				$_SESSION['type']="user";
 				$this->load->view("redirect",array("url"=>'/problemList'));
 			}else{
 				$this->load->view("redirect",array("error"=>'密码错误！'));

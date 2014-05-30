@@ -32,6 +32,7 @@ class Cadmin extends CI_Controller {
 	}
 	public function problems()
 	{
+		if(!$this->check_admin_login())$this->load->view("redirect",array("error"=>'还没有登录',"url"=>"/admin"));
 		$page_info=$this->_get_page_info('problem');
 		$current_page=$page_info['current_page'];
 		$total_page=$page_info['total_page'];
@@ -46,6 +47,7 @@ class Cadmin extends CI_Controller {
 	}
 	public function codes()
 	{
+		if(!$this->check_admin_login())$this->load->view("redirect",array("error"=>'还没有登录',"url"=>"/admin"));
 		$page_info=$this->_get_page_info('code');
 		$current_page=$page_info['current_page'];
 		$total_page=$page_info['total_page'];
@@ -60,6 +62,7 @@ class Cadmin extends CI_Controller {
 	}
 	public function users()
 	{
+		if(!$this->check_admin_login())$this->load->view("redirect",array("error"=>'还没有登录',"url"=>"/admin"));
 		$page_info=$this->_get_page_info('users');
 		$current_page=$page_info['current_page'];
 		$total_page=$page_info['total_page'];
@@ -74,6 +77,7 @@ class Cadmin extends CI_Controller {
 	}
 	public function contests()
 	{
+		if(!$this->check_admin_login())$this->load->view("redirect",array("error"=>'还没有登录',"url"=>"/admin"));
 		$page_info=$this->_get_page_info('contests');
 		$current_page=$page_info['current_page'];
 		$total_page=$page_info['total_page'];
@@ -86,8 +90,24 @@ class Cadmin extends CI_Controller {
 									"page"=>$current_page.'/'.$total_page.'页'));
 		$this->load->view('admin/footer');
 	}
+	public function managers()
+	{
+		if(!$this->check_admin_login())$this->load->view("redirect",array("error"=>'还没有登录',"url"=>"/admin"));
+		$page_info=$this->_get_page_info('managers');
+		$current_page=$page_info['current_page'];
+		$total_page=$page_info['total_page'];
+		$managers=$this->dbHandler->selectdata_no_condition('managers',$page_info['limit'],$page_info['offset'],'m_ID',"asc");
+		$this->load->view('admin/header',array("adminNaviManagers"=>true));
+		$this->load->view('admin/managers',
+							array(  "managers"=>$managers,
+									"pre_link"=>$current_page<=1?"#":"/admin/managers?page=".($current_page-1),
+									"next_link"=>$current_page>=$total_page?"#":"/admin/managers?page=".($current_page+1),
+									"page"=>$current_page.'/'.$total_page.'页'));
+		$this->load->view('admin/footer');
+	}
 	public function addContest()
 	{
+		if(!$this->check_admin_login())$this->load->view("redirect",array("error"=>'还没有登录',"url"=>"/admin"));
 		$this->load->view('admin/header',array("adminNaviAddNewCont"=>true));
 		$this->load->view('admin/addCont');
 		$this->load->view('admin/footer');
@@ -294,6 +314,7 @@ class Cadmin extends CI_Controller {
 				$_SESSION['username']=$userName;
 				$_SESSION['email']=$info['0']->m_email;
 				$_SESSION['userid']=$info['0']->m_ID;
+				$_SESSION['type']="admin";
 				$this->load->view("redirect",array("url"=>'/admin/problems'));
 			}else{
 				$this->load->view("redirect",array("error"=>'密码错误！',"url"=>'/admin/index'));
@@ -303,7 +324,14 @@ class Cadmin extends CI_Controller {
 		}
 	}
 	public function logout(){
-		
+		if($_SESSION['username']){
+			session_unset(); 
+			session_destroy(); 
+			$this->load->view("redirect",array("error"=>'成功退出',"url"=>'/admin/index'));
+		}else $this->load->view("redirect",array("error"=>'退出失败'));
+	}
+	public function check_admin_login(){
+		return (isset($_SESSION['userid']) && $_SESSION['type']=="admin")?true:false;
 	}
 }
 ?>

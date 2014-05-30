@@ -58,6 +58,7 @@ $route['admin/index'] = "cadmin/index";
 $route['admin/problems'] = "cadmin/problems";
 $route['admin/codes'] = "cadmin/codes";
 $route['admin/users'] = "cadmin/users";
+$route['admin/managers'] = "cadmin/managers";
 $route['admin/contests'] = "cadmin/contests";
 $route['admin/addContest'] = "cadmin/addContest";
 
