@@ -15,7 +15,7 @@
         <ul class="menu">
             <li class="current first"><a href="/" target="_self">首页</a></li>
             <li><a href="/problemList" target="_self">题目</a></li>
-            <li><a href="#" target="_self">统计</a></li>
+            <li><a href="/contestList" target="_self">比赛</a></li>
             <li class="li_3"><a class="noclick" href="/" target="_blank">个人中心</a>
                 <dl class="li_3_content">
                     <dt></dt>

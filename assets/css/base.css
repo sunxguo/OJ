@@ -17,6 +17,14 @@ height: 0;
 ul li{
 	list-style:none;
 }
+a{
+	text-decoration: none;
+	color:#006CD9;
+}
+a:hover{
+	text-decoration: underline;
+	color:#004080;
+}
 textarea{
 	-moz-border-radius: 5px;      /* Gecko browsers */
     -webkit-border-radius: 5px;   /* Webkit browsers */
@@ -24,6 +32,29 @@ textarea{
 	padding:10px;
 	border:1px solid #e1e1e1;
 	font-family:Microsoft Yahei;
+}
+.tabview{
+	border-bottom:1px solid #ccc;
+}
+.tabview li{
+	float:left;
+	width:100px;
+	text-align:center;
+	height:40px;
+	line-height:40px;
+	background-color:white;
+	-moz-border-radius: 5px 5px 0px 0px;      /* Gecko browsers */
+    -webkit-border-radius: 5px 5px 0px 0px;   /* Webkit browsers */
+    border-radius: 5px 5px 0px 0pxpx;            /* W3C syntax */
+}
+.tabview li:hover{
+	cursor:pointer;
+	background-color:#EEEEEE;
+}
+.tabview .tab-active{
+	border:1px solid #ccc;
+	border-bottom:none;
+	margin-bottom: -1px;
 }
 .main {
 	width:960px;
@@ -159,11 +190,23 @@ textarea{
 .mg_r10{
 	margin-right:10px;
 }
+.width50{
+	width:50px;
+}
+.width150{
+	width:150px;
+}
+.width165{
+	width:165px;
+}
 .width200{
 	width:200px;
 }
-.width50{
-	width:50px;
+.width250{
+	width:250px;
+}
+.width300{
+	width:300px;
 }
 .width430{
 	width:430px;

@@ -19,7 +19,20 @@ function checkLogin(){
 		return false;
 	}
 }
-
+function contest_status($start,$end){
+	if(strtotime($start)>time()){
+		return array("name"=>"wait","name_cn"=>"未开始");
+	}
+	if(strtotime($end)<time()){
+		return array("name"=>"completed","name_cn"=>"已结束");
+	}
+	return array("name"=>"ing","name_cn"=>"进行中");
+}
+function load404($title="找不到",$msg="抱歉，找不到该页面"){
+	$this->load->view('header',array("title"=>$title));
+	$this->load->view('404',array("message"=>$msg));
+	$this->load->view('footer');
+}
 /**
  * 返回错误信息数组
  */

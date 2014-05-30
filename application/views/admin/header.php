@@ -20,11 +20,13 @@
 		<div class="sideNavi">
 			<ul>
 				<li class="l1">信息管理</li>
-				<li class="<?=(isset($adminNaviPro     ) && $adminNaviPro     ) ? 'cur' : '' ?>" onclick="window.location='/admin/problems'">题目管理</li>
-				<li class="<?=(isset($adminNaviCode ) && $adminNaviCode ) ? 'cur' : '' ?>" onclick="window.location='/admin/code'">源代码管理</li>
+				<li class="<?=(isset($adminNaviPro     ) && $adminNaviPro     ) ? 'cur' : '' ?>" onclick="window.location='/admin/problems'">题库管理</li>
+				<li class="<?=(isset($adminNaviCode ) && $adminNaviCode ) ? 'cur' : '' ?>" onclick="window.location='/admin/codes'">源代码管理</li>
 				<li class="<?=(isset($adminNaviUsers ) && $adminNaviUsers ) ? 'cur' : '' ?>" onclick="window.location='/admin/users'">用户管理</li>
 				<li class="<?=(isset($adminNaviManagers ) && $adminNaviManagers ) ? 'cur' : '' ?>" onclick="window.location='/admin/managers'">管理员管理</li>
-				<li class="l1">系统管理</li>
+				<li class="l1">比赛管理</li>
+				<li class="<?=(isset($adminNaviContests ) && $adminNaviContests ) ? 'cur' : '' ?>" onclick="window.location='/admin/contests'">已有比赛</li>
+				<li class="<?=(isset($adminNaviAddNewCont ) && $adminNaviAddNewCont ) ? 'cur' : '' ?>" onclick="window.location='/admin/addContest'">添加比赛</li>
 			</ul>
 		</div>
 		<div class="main_con">

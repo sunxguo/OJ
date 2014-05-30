@@ -1,0 +1,17 @@
+.contest_man .new_contest .title{
+	height:25px;
+	line-height:25px;
+	border:1px solid #feb270;
+	outline:none;
+	padding:5px;
+	font:14px Microsoft Yahei;
+	-moz-border-radius: 5px;      /* Gecko browsers */
+    -webkit-border-radius: 5px;   /* Webkit browsers */
+    border-radius:5px;            /* W3C syntax */
+}
+.contest_man .new_contest li{
+	margin-top:10px;
+}
+.lang-box{
+	margin-left:20px;
+}

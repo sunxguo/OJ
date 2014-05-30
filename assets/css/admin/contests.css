@@ -1,0 +1,114 @@
+/* CSS Document */
+.contest_man .oper{
+	width:90%;
+	height:50px;
+}
+.new_contest{
+	display:none;
+	background-color:white;
+	width:750px;
+	height:550px;
+	border:1px solid #1A7AAA;
+	-moz-border-radius: 5px;      /* Gecko browsers */
+    -webkit-border-radius: 5px;   /* Webkit browsers */
+    border-radius:5px;            /* W3C syntax */
+}
+.contest_editor{
+	display:none;
+	background-color:white;
+	width:750px;
+	border:1px solid #1A7AAA;
+	-moz-border-radius: 5px;      /* Gecko browsers */
+    -webkit-border-radius: 5px;   /* Webkit browsers */
+    border-radius:5px;            /* W3C syntax */
+}
+.contest_man .oper h3{
+	display:inline-block;
+}
+.contest_man .lists li{
+	width:850px;
+	padding:10px;
+	border-bottom:1px dashed #CCC;
+}
+.contest_man .lists .list_head{
+	background-color:rgb(239,239,239);
+	height:30px;
+	line-height:30px;
+	font-size:1.1em;
+}
+.contest_man .lists li span{
+	display:inline-block;
+	text-align:center;
+}
+.contest_man .lists .list_item:hover{
+	background-color:#feb270;
+}
+.contest_man .lists .contest_editor{
+	display:none;
+	background-color:white;
+	width:750px;
+	height:550px;
+	border:1px solid #1A7AAA;
+	-moz-border-radius: 5px;      /* Gecko browsers */
+    -webkit-border-radius: 5px;   /* Webkit browsers */
+    border-radius:5px;            /* W3C syntax */
+}
+.contest_man .lists .contest_editor li{
+	border:none;
+}
+.contest_man .page{
+	margin-top:50px;
+	margin-bottom:50px;
+	width:350px;
+	float:right;
+}
+.contest_man .contest_editor .title{
+	height:25px;
+	line-height:25px;
+	border:1px solid #feb270;
+	outline:none;
+	padding:5px;
+	font:14px Microsoft Yahei;
+	-moz-border-radius: 5px;      /* Gecko browsers */
+    -webkit-border-radius: 5px;   /* Webkit browsers */
+    border-radius:5px;            /* W3C syntax */
+}
+.contest_man .contest_editor li{
+	margin-top:10px;
+}
+.lang-box{
+	margin-left:20px;
+}
+.contest_man .contest_editor .list-head{
+	background-color:rgb(239,239,239);
+	height:30px;
+	line-height:30px;
+	font-size:1.1em;
+}
+.contest_man .contest_editor li span{
+	display:inline-block;
+	text-align:center;
+}
+.contest_man .contest_editor .bt{
+	height:35px;
+	line-height:35px;
+	border:1px solid #feb270;
+	outline:none;
+	padding:5px;
+	font:14px Microsoft Yahei;
+	background-color:white;
+	color:#feb270;
+	-moz-border-radius: 5px;      /* Gecko browsers */
+    -webkit-border-radius: 5px;   /* Webkit browsers */
+    border-radius:5px;            /* W3C syntax */
+}
+
+.contest_man .contest_editor .bt:hover{
+	background-color:#feb270;
+	color:white;
+	cursor:pointer;
+}
+.contest_man #prolist a:hover{
+	cursor:pointer;
+	color:red;
+}

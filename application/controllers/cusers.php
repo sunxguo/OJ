@@ -13,6 +13,11 @@ class Cusers extends CI_Controller {
 		$this->load->view('login');
 		$this->load->view('footer');
 	}
+	public function register(){
+		$this->load->view('header',array("title"=>"OJ用户注册"));
+		$this->load->view('register');
+		$this->load->view('footer');
+	}
 	public function subProblems()
 	{
 		$this->load->model("dbHandler");
@@ -40,12 +45,12 @@ class Cusers extends CI_Controller {
 				$_SESSION['username']=$userName;
 				$_SESSION['email']=$info['0']->u_email;
 				$_SESSION['userid']=$info['0']->u_ID;
-				$this->load->view("redirect",array("error"=>'登录成功！',"url"=>'/problemList'));
+				$this->load->view("redirect",array("url"=>'/problemList'));
 			}else{
-				$this->load->view("redirect",array("error"=>'密码错误！',"url"=>'/users/login'));
+				$this->load->view("redirect",array("error"=>'密码错误！'));
 			}
 		}else{
-			$this->load->view("redirect",array("error"=>'账号不存在！',"url"=>'/users/login'));
+			$this->load->view("redirect",array("error"=>'账号不存在！'));
 		}
 	}
 	public function user_logout(){
@@ -54,6 +59,21 @@ class Cusers extends CI_Controller {
 			session_destroy(); 
 			echo "success";
 		}else echo "failed";
+	}
+	public function user_register()
+	{
+		$data['u_name']=$_POST['userName'];
+		$data['u_pwd']=$_POST['pwd'];
+		$data['u_email']=$_POST['email'];
+		$data['u_regDate']=date('Y-m-d H:i:s',time());
+		$this->load->model("dbHandler");
+		$info=$this->dbHandler->selectPartData('users','u_name',$data['u_name']);
+		if(count($info)<1){
+			$result=$this->dbHandler->insertdata('users',$data);
+			if($result==1)	$this->load->view("redirect",array("error"=>'注册成功，请登录！',"url"=>'/users/login'));
+		}else{
+			$this->load->view("redirect",array("error"=>'用户名已存在！'));
+		}
 	}
 	public function getMyProblems(){
 		return $info=$this->dbHandler->selectPartData('problem','m_name',$userName);
@@ -72,7 +92,12 @@ class Cusers extends CI_Controller {
 		//print_r($code);
 		foreach($code as $key=>$value){
 			$problem=$this->dbHandler->selectPartData('problem','p_ID',$value->c_pID);
-			$value->problem=$problem[0];
+			if(count($problem)>0)$value->problem=$problem[0];
+			else {
+				$value->problem = new stdClass();
+				$value->problem->p_ID=0;
+				$value->problem->p_Title="该题目不存在";
+			}
 			/*
 				0 等待处理
 				1 通过（Accepted,AC）

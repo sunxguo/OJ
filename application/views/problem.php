@@ -22,11 +22,15 @@
 	    <p><?=$problem->p_Content?></p>
 	 </div> 
 	<div class="submit_code">
-		<form method="post" action="/problem/execute_code" enctype="multipart/form-data">
+	<?php if(isset($_SESSION['userid'])){?>
+		<form method="post" action="/problem/submit_code" enctype="multipart/form-data">
 			<h3 class="title3">提交代码</h3>
 			<textarea name="code" rows="15" cols="80" placeholder="请输入代码"></textarea><br/>
 			<input name="pro_id" type="hidden" value="<?=$problem->p_ID?>"/>
 			<input class="confirm_bt mg_t10" type="submit" value="提交代码"/>
 		</form>
+	<?php }else{ ?>
+		<input class="confirm_bt mg_t10" type="button" value="提交代码" onclick="登录后才可以提交代码"/>
+	<?php }?>
 	</div>
 </div>

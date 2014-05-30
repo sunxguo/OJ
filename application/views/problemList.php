@@ -12,7 +12,7 @@
 		<li class="list_item">
 			<span style="width:10%;"><?=$problem->p_ID?></span>
 			<span style="width:55%;">
-				<a href="/problem?pid=<?=$problem->p_ID?>" target="_blank"><?=$problem->p_Title?></a>
+				<a href="/problem?id=<?=$problem->p_ID?>" target="_blank"><?=$problem->p_Title?></a>
 			</span>
 			<span style="width:15%;"><?=$problem->p_SubNum?></span>
 			<span style="width:15%;"><?=$problem->p_DealNum?></span>

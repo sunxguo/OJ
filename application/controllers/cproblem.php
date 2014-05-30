@@ -6,7 +6,7 @@ class Cproblem extends CI_Controller {
 		 $this->load->helper("base");
 	}
 	public function getProblem(){
-		$pid=isset($_GET['pid'])?$_GET['pid']:'1';
+		$pid=isset($_GET['id'])?$_GET['id']:'1';
 		return $this->dbHandler->selectPartData('problem','p_ID',$pid);
 	}
 	public function index()
@@ -27,7 +27,7 @@ class Cproblem extends CI_Controller {
 		$data['c_pID']=$_POST['pro_id'];
 		$data['c_code']=$_POST['code'];
 		$data['c_uID']=$_SESSION['userid'];
-		$data['c_creationDate']= date('Y-m-d h:i:s',time());
+		$data['c_creationDate']= date('Y-m-d H:i:s',time());
 		$data['c_status']=0;
 		$this->load->model("dbHandler");
 		$result=$this->dbHandler->insertdata('code',$data);

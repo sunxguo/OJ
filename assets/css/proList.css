@@ -1,4 +1,7 @@
 /* CSS Document */
+.problem_list{
+	width:960px;
+}
 .problem_list .lists li{
 	width:960px;
 	padding:10px;
@@ -62,4 +65,25 @@
 }
 .problem_list .page{
 	margin-top:50px;
+}
+.problem_list .lists  .list_item .status{
+	width:60px;
+	height:25px;
+	line-height:25px;
+	color:white;
+	font-size:14px;
+	margin-top:10px;
+	text-align:center;
+	-moz-border-radius: 5px;      /* Gecko browsers */
+    -webkit-border-radius: 5px;   /* Webkit browsers */
+    border-radius:5px;            /* W3C syntax */
+}
+.problem_list .lists  .list_item .status-completed{
+	background-color:#FF0000;
+}
+.problem_list .lists .list_item .status-ing{
+	background-color:#00B300;
+}
+.problem_list .lists .list_item .status-wait{
+	background-color:#FFBF00;
 }

@@ -44,20 +44,22 @@ $route['users/register'] = "cusers/register";//用户注册
 $route['users/user_login'] = "cusers/user_login";//登录方法
 $route['users/user_logout'] = "cusers/user_logout";//退出方法
 $route['problemList'] = "cproblemList";
+$route['contestList'] = "ccontestList";
 $route['problem'] = "cproblem";
+$route['contest'] = "ccontest";
 $route['users/user_center_myCode'] = "cusers/user_center_myCode";
 $route['problem/submit_code'] = "cproblem/submit_code";
 $route['problem/execute_code'] = "cproblem/execute_code";
 $route['problem/get_arg'] = "cproblem/get_arg";
 //后台管理系统
-$route['admin'] = "cadmin/login";
+$route['admin'] = "cadmin";
 $route['admin/login'] = "cadmin/login";
 $route['admin/index'] = "cadmin/index";
 $route['admin/problems'] = "cadmin/problems";
-$route['admin/get_problem_detail'] = "cadmin/get_problem_detail";
-$route['admin/add_problem'] = "cadmin/add_problem";
-$route['admin/modify_problem'] = "cadmin/modify_problem";
-$route['admin/delete_problem'] = "cadmin/delete_problem";
+$route['admin/codes'] = "cadmin/codes";
+$route['admin/users'] = "cadmin/users";
+$route['admin/contests'] = "cadmin/contests";
+$route['admin/addContest'] = "cadmin/addContest";
 
 $route['404_override'] = '';
 

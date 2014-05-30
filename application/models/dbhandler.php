@@ -34,6 +34,14 @@ class DbHandler extends CI_Model{
 		$this->db->order_by($ordercol,$orderby);
 	 	return $query = $this->db->get()->result();
 	 }
+	  public function select_all_data_by_order($table,$where,$content,$ordercol,$orderby)
+	 {
+		$this->load->database();
+		$this->db->where($where,$content);
+		$this->db->from($table);
+		$this->db->order_by($ordercol,$orderby);
+	 	return $query = $this->db->get()->result();
+	 }
 	  public function selectdata_no_condition($table,$limit,$offset,$ordercol,$orderby)
 	 {
 		$this->load->database();
@@ -48,6 +56,12 @@ class DbHandler extends CI_Model{
 		$this->db->where($where,$content);
 		$this->db->from($table);
 		//$this->db->orderby($ordercol,$orderby);
+	 	return $query = $this->db->get()->result();
+	 }
+	 public function sel_data_by_mul_condition($table,$condition){
+		$this->load->database();
+		$this->db->where($condition);
+		$this->db->from($table);
 	 	return $query = $this->db->get()->result();
 	 }
 	 public function selectAllData($table)
