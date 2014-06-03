@@ -35,6 +35,8 @@ CREATE TABLE `code` (
   `c_creationDate` datetime NOT NULL COMMENT '代码提交时间',
   `c_type` tinyint(4) NOT NULL DEFAULT '1' COMMENT '类别：1->练习;2->比赛;',
   `c_groupId` int(11) NOT NULL DEFAULT '1' COMMENT '所属组别的id',
+  `c_compile` varchar(1000) DEFAULT NULL,
+  `c_run` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`c_ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -45,7 +47,7 @@ CREATE TABLE `code` (
 
 LOCK TABLES `code` WRITE;
 /*!40000 ALTER TABLE `code` DISABLE KEYS */;
-INSERT INTO `code` VALUES (1,1,8,'测试',0,NULL,NULL,'2014-04-19 01:20:06',1,1),(2,1,8,'测试',0,NULL,NULL,'2014-04-19 01:21:01',1,1),(3,1,8,'<pre class=\"prettyprint lang-java\">import java.io.*;\r\nimport java.util.*;\r\npublic class Main\r\n{\r\n            public static void main(String args[]) throws Exception\r\n            {\r\n                    Scanner cin=new Scanner(System.in);\r\n                    int a=cin.nextInt(),b=cin.nextInt();\r\n                    System.out.println(a+b);\r\n            }\r\n}</pre>',0,NULL,NULL,'2014-04-19 01:28:41',1,1),(4,1,8,'gfsg',0,NULL,NULL,'2014-04-20 01:29:24',1,1),(5,1,19,'d',0,NULL,NULL,'2014-04-20 04:32:47',1,1),(6,1,8,'#include \"../Include/stdio.h\"\r\n#include \"../Include/stdlib.h\"\r\n\r\nvoid main()\r\n{\r\n    int i = 0;\r\n    while(i < 10)\r\n    {\r\n        printf(\"%d \", i);\r\n        i++;\r\n    }\r\n    printf(\"Hello world\\n\");\r\n    system(\"pause\");\r\n}',0,NULL,NULL,'2014-04-21 03:15:27',1,1),(7,1,8,'#include \"../Include/stdio.h\"\r\n#include \"../Include/stdlib.h\"\r\n\r\nvoid main()\r\n{\r\n    int i = 0;\r\n    while(i < 10)\r\n    {\r\n        printf(\"%d \", i);\r\n        i++;\r\n    }\r\n    printf(\"Hello world\\n\");\r\n    system(\"pause\");\r\n}',0,NULL,NULL,'2014-04-21 03:18:06',1,1),(8,1,10,'If you don\'t know ho',0,NULL,NULL,'2014-05-29 11:34:04',1,1);
+INSERT INTO `code` VALUES (1,1,8,'测试',0,NULL,NULL,'2014-04-19 01:20:06',1,1,NULL,NULL),(2,1,8,'测试',0,NULL,NULL,'2014-04-19 01:21:01',1,1,NULL,NULL),(3,1,8,'<pre class=\"prettyprint lang-java\">import java.io.*;\r\nimport java.util.*;\r\npublic class Main\r\n{\r\n            public static void main(String args[]) throws Exception\r\n            {\r\n                    Scanner cin=new Scanner(System.in);\r\n                    int a=cin.nextInt(),b=cin.nextInt();\r\n                    System.out.println(a+b);\r\n            }\r\n}</pre>',0,NULL,NULL,'2014-04-19 01:28:41',1,1,NULL,NULL),(4,1,8,'gfsg',0,NULL,NULL,'2014-04-20 01:29:24',1,1,NULL,NULL),(5,1,19,'d',0,NULL,NULL,'2014-04-20 04:32:47',1,1,NULL,NULL),(6,1,8,'#include \"../Include/stdio.h\"\r\n#include \"../Include/stdlib.h\"\r\n\r\nvoid main()\r\n{\r\n    int i = 0;\r\n    while(i < 10)\r\n    {\r\n        printf(\"%d \", i);\r\n        i++;\r\n    }\r\n    printf(\"Hello world\\n\");\r\n    system(\"pause\");\r\n}',0,NULL,NULL,'2014-04-21 03:15:27',1,1,NULL,NULL),(7,1,8,'#include \"../Include/stdio.h\"\r\n#include \"../Include/stdlib.h\"\r\n\r\nvoid main()\r\n{\r\n    int i = 0;\r\n    while(i < 10)\r\n    {\r\n        printf(\"%d \", i);\r\n        i++;\r\n    }\r\n    printf(\"Hello world\\n\");\r\n    system(\"pause\");\r\n}',0,NULL,NULL,'2014-04-21 03:18:06',1,1,NULL,NULL),(8,1,10,'If you don\'t know ho',0,NULL,NULL,'2014-05-29 11:34:04',1,1,NULL,NULL);
 /*!40000 ALTER TABLE `code` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -115,7 +117,7 @@ CREATE TABLE `grouppro` (
   `gp_pID` int(11) NOT NULL COMMENT '题目的id',
   `gp_pNum` int(11) NOT NULL COMMENT '在比赛中的题号',
   PRIMARY KEY (`gp_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COMMENT='有组织的题目，如比赛/作业的题目';
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COMMENT='有组织的题目，如比赛/作业的题目';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -124,7 +126,7 @@ CREATE TABLE `grouppro` (
 
 LOCK TABLES `grouppro` WRITE;
 /*!40000 ALTER TABLE `grouppro` DISABLE KEYS */;
-INSERT INTO `grouppro` VALUES (4,'4',10,3),(15,'4',8,5),(16,'5',8,1),(17,'5',10,2),(19,'5',14,2),(20,'4',14,4);
+INSERT INTO `grouppro` VALUES (4,'4',10,3),(15,'4',8,5),(16,'5',8,1),(17,'5',10,2),(19,'5',14,2),(20,'4',14,4),(21,'11',8,1),(22,'11',10,2);
 /*!40000 ALTER TABLE `grouppro` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -230,7 +232,7 @@ CREATE TABLE `contests` (
   `cont_AuthorID` int(11) DEFAULT NULL,
   PRIMARY KEY (`cont_ID`),
   UNIQUE KEY `cont_url_UNIQUE` (`cont_url`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -239,7 +241,7 @@ CREATE TABLE `contests` (
 
 LOCK TABLES `contests` WRITE;
 /*!40000 ALTER TABLE `contests` DISABLE KEYS */;
-INSERT INTO `contests` VALUES (4,'测试比赛','方','2014-05-06 05:05:00','2014-05-05 05:05:00','test','a:1:{i:0;s:1:\"0\";}',0,0,'2014-05-28 18:20:03',1),(5,'手机','ff','2014-05-06 05:05:00','2014-05-31 05:05:00','phone','a:1:{i:0;s:1:\"0\";}',0,0,'2014-05-29 17:44:00',1),(6,'手机','ff','2014-05-06 05:05:00','2014-05-31 05:05:00','phoneddd','a:1:{i:0;s:1:\"0\";}',0,0,'2014-05-29 17:44:25',1),(7,'手机','ff','2014-05-06 05:05:00','2014-05-31 05:05:00','sss','a:1:{i:0;s:1:\"0\";}',0,0,'2014-05-29 17:48:23',1),(8,'手机','ff','2014-05-06 05:05:00','2014-05-31 05:05:00','sss12','a:1:{i:0;s:1:\"0\";}',0,0,'2014-05-29 17:49:32',1),(9,'手机','ff','2014-05-06 05:05:00','2014-05-31 05:05:00','sss123','a:1:{i:0;s:1:\"0\";}',0,0,'2014-05-29 17:50:52',1),(10,'手机','44','2014-05-31 04:04:00','2014-06-14 04:04:00','444','a:1:{i:0;s:1:\"0\";}',0,0,'2014-05-29 17:52:32',1);
+INSERT INTO `contests` VALUES (4,'测试比赛','方','2014-05-06 05:05:00','2014-05-05 05:05:00','test','a:1:{i:0;s:1:\"0\";}',0,0,'2014-05-28 18:20:03',1),(5,'手机','ff','2014-05-06 05:05:00','2014-05-31 05:05:00','phone','a:1:{i:0;s:1:\"0\";}',0,0,'2014-05-29 17:44:00',1),(6,'手机','ff','2014-05-06 05:05:00','2014-05-31 05:05:00','phoneddd','a:1:{i:0;s:1:\"0\";}',0,0,'2014-05-29 17:44:25',1),(7,'手机','ff','2014-05-06 05:05:00','2014-05-31 05:05:00','sss','a:1:{i:0;s:1:\"0\";}',0,0,'2014-05-29 17:48:23',1),(8,'手机','ff','2014-05-06 05:05:00','2014-05-31 05:05:00','sss12','a:1:{i:0;s:1:\"0\";}',0,0,'2014-05-29 17:49:32',1),(9,'手机','ff','2014-05-06 05:05:00','2014-05-31 05:05:00','sss123','a:1:{i:0;s:1:\"0\";}',0,0,'2014-05-29 17:50:52',1),(10,'手机','44','2014-05-31 04:04:00','2014-06-14 04:04:00','444','a:1:{i:0;s:1:\"0\";}',0,0,'2014-05-29 17:52:32',1),(11,'随便','绥滨','2014-06-10 04:04:00','2014-06-11 04:04:00','suibian','a:1:{i:0;s:1:\"0\";}',0,0,'2014-06-03 10:41:32',1);
 /*!40000 ALTER TABLE `contests` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -252,4 +254,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-05-30 18:49:09
+-- Dump completed on 2014-06-03 23:25:00
