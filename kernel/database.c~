@@ -209,7 +209,7 @@ int execute(int id,int problem_id){
 	printf("time memory process：%s\n",timeArray[13]);
 	printf("time memory system：%s\n",timeArray[14]);
 //input data  
-	fputs("3 2",pp);
+	fputs("3 2>/var/www/data/1.out",pp);
 //	freopen("/var/www/data/8/1.in","r",stdin);
 	while(fgets(buf, sizeof buf, pp))
 	{

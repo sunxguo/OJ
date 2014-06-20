@@ -126,8 +126,8 @@ class Cadmin extends CI_Controller {
 			return false;
 		}
 		$result=$this->dbHandler->insertdata($dbInfo['dbTable'],$dbData);
-		$data=$this->dbHandler->sel_data_by_mul_condition($dbInfo['dbTable'],$dbData)[0];
-		if($result==1)echo json_encode(array("result"=>"success","message"=>$data));
+		$data=$this->dbHandler->sel_data_by_mul_condition($dbInfo['dbTable'],$dbData);
+		if($result==1)echo json_encode(array("result"=>"success","message"=>$data[0]));
 		else echo  json_encode(array("result"=>"failed","message"=>"internal error"));
 		
 	}
